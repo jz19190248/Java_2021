@@ -8,6 +8,7 @@ public class W2_P1_T6 {
         System.out.print("请输入一个正整数：");
         int n = scanner.nextInt();
         print(n);
+        scanner.close();
     }
 
     public static void print(int n) {

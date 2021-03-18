@@ -18,6 +18,7 @@ public class W2_P1_T3 {
             System.out.println("是质数");
         else
             System.out.println("不是质数");
+            scanner.close();
 
     }
 

@@ -15,6 +15,7 @@ public class W2_P1_T4 {
         int k = scanner.nextInt();
         prime(isPrime);
         print(isPrime, i, j, k);
+        scanner.close();
     }
 
     public static void print(int[] isPrime, int i, int j, int k) {

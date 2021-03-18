@@ -9,6 +9,7 @@ public class W2_P1_T8 {
         int a = scanner.nextInt();
         int n = scanner.nextInt();
         System.out.println("和 = " + sum(a, n));
+        scanner.close();
     }
 
     public static int sum(int a, int n) {

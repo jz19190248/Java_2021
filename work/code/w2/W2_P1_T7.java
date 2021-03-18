@@ -8,6 +8,7 @@ public class W2_P1_T7 {
         System.out.print("请输入一个正整数：");
         int n = scanner.nextInt();
         System.out.println(fibonacci(n));
+        scanner.close();
     }
 
     public static int fibonacci(int n) {

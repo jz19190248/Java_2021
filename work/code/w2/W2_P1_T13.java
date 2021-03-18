@@ -8,6 +8,7 @@ public class W2_P1_T13 {
         System.out.print("请输入一个正整数：");
         int n = scanner.nextInt();
         System.out.print("逆序数：" + solution(n));
+        scanner.close();
     }
 
     public static int solution(int n) {

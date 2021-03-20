@@ -5,23 +5,28 @@ public class W2_P1_T18 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("请输入一个正整数：");
-        int n = scanner.nextInt();
         int MAX = 8;
         int[] array = { 10, 11, 12, 13, 14, 15, 16, 17 };
-        System.out.println(findIndex(n, array, MAX));
+        System.out.print("数组翻转前：");
+        for (int i = 0; i < MAX; i++) {
+            System.out.print(array[i] + "  ");
+        }
+        System.out.println();
+        reverse(array, MAX);
+        System.out.print("数组翻转后：");
+        for (int i = 0; i < MAX; i++) {
+            System.out.print(array[i] + "  ");
+        }
         scanner.close();
     }
 
-    public static int findIndex(int n, int[] array, int MAX) {
+    public static void reverse(int[] array, int MAX) {
         int i = 0;
-        while (i < MAX) {
-            if (array[i] == n) {
-                return i;
-            }
-            i++;
+        for (i = 0; i <= MAX / 2; i++) {
+            int temp = array[i];
+            array[i] = array[MAX - i - 1];
+            array[MAX - i - 1] = temp;
         }
-        return -1;
     }
 
 }

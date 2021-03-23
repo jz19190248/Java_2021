@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthEditorPaneUI;
-
 public class W2_P1_T23 {
     // 回文字符串判断
     public static void main(String[] args) {

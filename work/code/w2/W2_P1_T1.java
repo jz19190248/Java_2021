@@ -9,7 +9,9 @@ public class W2_P1_T1 {
         int k = scanner.nextInt();
         int j = scanner.nextInt();
         solution(i, j, k);
+        scanner.close();
     }
+
     public static void solution(int i, int j, int k) {
         int sum = 0, a = 0, m = 0;
         while (m <= j) {

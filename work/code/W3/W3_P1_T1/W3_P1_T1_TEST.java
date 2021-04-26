@@ -1,6 +1,4 @@
 package W3_P1_T1;
-
-import java.util.*;
 //复数对象的设计
 
 public class W3_P1_T1_TEST {

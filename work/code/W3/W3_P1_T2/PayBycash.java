@@ -1,4 +1,3 @@
-package W3_P1_T2;
 
 public class PayByCash extends Pay {
     public void payway(double x) {

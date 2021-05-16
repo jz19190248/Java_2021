@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"path": "..\\..\\..\\..\\..\\Java_2021\\work\\code\\W3\\W3_P1_T2"
+	},
+	{
+		"path": "..\\..\\..\\..\\..\\Java_2021\\work\\code"
+	}
+],
+  "settings": {
+    "java.project.sourcePaths": [
+      "W3/W3_P1_T3",
+      "W3/W3_P1_T4"
+    ]
+  }
+}

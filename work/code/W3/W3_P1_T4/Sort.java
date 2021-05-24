@@ -1,8 +1,8 @@
 
 
 public interface Sort {
-    public void SortMothd();
-};
+    void SortMothd();
+}
 
 class QuickSort implements Sort {
     public void SortMothd(){

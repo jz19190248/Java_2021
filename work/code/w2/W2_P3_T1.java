@@ -14,7 +14,7 @@ public class W2_P3_T1 {
         System.out.print("请输入一个整数：");
         n = scanner.nextInt();
 
-        DFS(0, 0, 1);
+        DFS(0, 0, 99);
         scanner.close();
     }
 

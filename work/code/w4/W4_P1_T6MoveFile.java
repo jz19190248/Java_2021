@@ -1,6 +1,5 @@
 import java.io.File;
 import java.util.Scanner;
-
 public class W4_P1_T6MoveFile {
     public static void main(String[] args) {
         String srcFile,destPath;

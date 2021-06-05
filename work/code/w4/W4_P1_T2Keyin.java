@@ -1,7 +1,5 @@
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
-
 public class W4_P1_T2Keyin {
     public static void main(String[] args) {
         try{

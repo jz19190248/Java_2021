@@ -10,7 +10,6 @@ import java.io.FileInputStream;
  * 多折腾，多收获。
  * 此外，主义bytep[]直接使用toString()时，打印的事首地址，而不是内容！不可以想当然！
  */
-
 public class W4_P1_T4_BMPAnalysis {
 
     private  static  final String FILE_Name = "T4_test.bmp";

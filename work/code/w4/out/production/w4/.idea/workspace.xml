@@ -2,20 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc71e42c-0ed4-4834-8954-3bacd9136b4a" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/W4_P1_T14ScoreStatistic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/W4_P1_T15PrintPrimeNumbers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/W4_P1_T16_TransposedMatrix.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/getnumber.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/number.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/primes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/score.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/~$va语言第四次作业.doc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/W4_P1_T13GetNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/W4_P1_T13GetNumber.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tree.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/W4.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/W4_P1_T20TreeSerialize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/T2_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/T2_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W4_P1_T1CopyFIle.java" beforeDir="false" afterPath="$PROJECT_DIR$/W4_P1_T1CopyFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/W4_P1_T2Keyin.java" beforeDir="false" afterPath="$PROJECT_DIR$/W4_P1_T2Keyin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/newFile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/w4/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/w4/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/w4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/w4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/w4/W4_P1_T19ComplexSerialize.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/w4/W4_P1_T19ComplexSerialize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/w4/complex.ser" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/w4/complex.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../src/Java语言第四次作业.doc" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Java语言第四次作业.doc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/~$va语言第四次作业.doc" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,38 +57,40 @@
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
-  <component name="RunManager" selected="应用程序.W4_P1_T16_TransposedMatrix">
-    <configuration name="W4_P1_T12PrintLine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="W4_P1_T12PrintLine" />
+  <component name="RunManager" selected="应用程序.W4_P1_T3_RandomNumber">
+    <configuration name="W4_P1_T19ComplexSerialize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="W4_P1_T19ComplexSerialize" />
       <module name="w4" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="W4_P1_T13GetNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="W4_P1_T13GetNumber" />
+    <configuration name="W4_P1_T1CopyFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="W4_P1_T1CopyFile" />
       <module name="w4" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="W4_P1_T14ScoreStatistic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="W4_P1_T14ScoreStatistic" />
+    <configuration name="W4_P1_T20TreeSerialize" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="W4_P1_T20TreeSerialize" />
       <module name="w4" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="W4_P1_T15PrintPrimeNumbers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="W4_P1_T15PrintPrimeNumbers" />
+    <configuration name="W4_P1_T2Keyin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="W4_P1_T2Keyin" />
       <module name="w4" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="W4_P1_T16_TransposedMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="W4_P1_T16_TransposedMatrix" />
+    <configuration name="W4_P1_T3_RandomNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="W4_P1_T3_RandomNumber" />
       <module name="w4" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,11 +98,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.W4_P1_T16_TransposedMatrix" />
-        <item itemvalue="应用程序.W4_P1_T15PrintPrimeNumbers" />
-        <item itemvalue="应用程序.W4_P1_T14ScoreStatistic" />
-        <item itemvalue="应用程序.W4_P1_T13GetNumber" />
-        <item itemvalue="应用程序.W4_P1_T12PrintLine" />
+        <item itemvalue="应用程序.W4_P1_T3_RandomNumber" />
+        <item itemvalue="应用程序.W4_P1_T2Keyin" />
+        <item itemvalue="应用程序.W4_P1_T1CopyFile" />
+        <item itemvalue="应用程序.W4_P1_T20TreeSerialize" />
+        <item itemvalue="应用程序.W4_P1_T19ComplexSerialize" />
       </list>
     </recent_temporary>
   </component>
@@ -130,5 +131,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/W4_P1_T16_TransposedMatrix.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -2,7 +2,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Random;
-
 public class W4_P1_T3_RandomNumber {
     public static void main(String[] args) {
         FileOutputStream fos;

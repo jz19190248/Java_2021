@@ -1,0 +1,43 @@
+MyReflection.java
+	package org.annotations;
+	import java.lang.annotation.Annotation;
+	import java.lang.reflect.Method;
+	public class MyReflection {
+		public static void main(String[] args) throws Exception {
+			MyTest myTest = new MyTest();
+			Class<MyTest> c = MyTest.class;					// 得到MyTest类的Class对象
+			// 返回Class对象所表示的MyTest类指定方法output()******/
+			Method method = c.getMethod("output", new Class[] {});		
+			// 如果指定的注解存在于此方法中，则返回true，否则返回false
+			if (method.isAnnotationPresent(MyAnnotation.class)) {											method.invoke(myTest, new Object[] {});	// 调用指定对象myTest的的方法
+				// 返回方法output的注解
+				MyAnnotation myAnnotation = method.getAnnotation(MyAnnotation.class);						String hello = myAnnotation.hello();				
+				String world = myAnnotation.world();
+				System.out.println(hello);
+				System.out.println(world);
+			}
+		}
+	}
+MyAnnotation.java
+	package org.annotations;
+	@MyAnnotation(hello = "beijing", world = "shanghai")
+	public class MyTest {
+		@MyAnnotation(hello = "beijing", world = "shanghai")
+		@Deprecated
+		@SuppressWarnings("unchecked")
+		public void output() {
+			System.out.println("output something");
+		}
+	}
+	MyAnnotation.java
+	package org.annotations;
+	import java.lang.annotation.*;
+	@Retention(RetentionPolicy.RUNTIME)				// 在运行期保存注解
+	public @interface MyAnnotation {
+		String hello() default "nanjing";
+		String world();
+	}
+	程序运行结果：
+	output something
+	beijing
+	shanghai

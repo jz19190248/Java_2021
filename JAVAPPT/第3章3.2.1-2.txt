@@ -1,0 +1,32 @@
+Sequence.java
+	class Pupil {
+		Pupil(int age) {
+			System.out.println("pupil: " + age);
+		}
+	}
+	class Teacher {
+		Pupil p1 = new Pupil(9); 
+		Teacher() {
+			System.out.println("Teacher()");
+			p3 = new Pupil(10); 
+		}
+		Pupil p2 = new Pupil(11); 
+		void teach() {
+			System.out.println("teach()");
+		}
+		Pupil p3 = new Pupil(12); 
+	}
+	public class Sequence {
+		public static void main(String[] args) {
+			Teacher t = new Teacher();
+			t.teach(); 
+		}
+	}
+	在类Teacher中定义的3个成员变量p1、p2、p3均为引用类型。
+	程序运行结果：
+	pupil: 9
+	pupil: 11
+	pupil: 12
+	Teacher()
+	pupil: 10
+	teach()

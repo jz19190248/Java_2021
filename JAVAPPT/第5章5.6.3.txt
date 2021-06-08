@@ -1,0 +1,38 @@
+CalendarDate.java
+	import java.util.GregorianCalendar;
+	import java.util.Date;
+	import java.text.DateFormat;
+	public class CalendarDate {
+		public static void main(String[] args) {
+			//***********设定日期和时间格式**********************
+			DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL);	
+			GregorianCalendar cal = new GregorianCalendar();
+			cal.setTime(new Date());
+			System.out.println("System Date: " + dateFormat.format(cal.getTime()));
+			cal.set(GregorianCalendar.DAY_OF_WEEK, GregorianCalendar.MONDAY);
+			System.out.println("After Setting Day of Week to Friday: "
+					+ dateFormat.format(cal.getTime()));
+			int monday11Count = 0;
+			while (monday11Count < 10) {
+				cal.add(GregorianCalendar.DAY_OF_MONTH, 7);	 //增加7天得到下一个星期一
+				//************判断星期一的那天是否是11号**************
+				if (cal.get(GregorianCalendar.DAY_OF_MONTH) == 11) {	
+					monday11Count++;
+					System.out.println(dateFormat.format(cal.getTime()));
+				}
+			}
+		}
+	}
+程序运行结果：
+System Date: 2008年12月5日 星期五
+After Setting Day of Week to Friday: 2008年12月1日 星期一
+2009年5月11日 星期一
+2010年1月11日 星期一
+2010年10月11日 星期一
+2011年4月11日 星期一
+2011年7月11日 星期一
+2012年6月11日 星期一
+2013年2月11日 星期一
+2013年3月11日 星期一
+2013年11月11日 星期一
+2014年8月11日 星期一

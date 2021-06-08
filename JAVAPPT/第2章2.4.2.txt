@@ -1,0 +1,32 @@
+PrimeNumber.java
+public class PrimeNumber {
+	boolean isPrime(int n) { 					// 判断是否是质数
+		for (int i = 2; i <= n / 2; i++)
+			if (n % i == 0)					// 能被整除，则不是质数
+				return false;
+		return true;
+	}
+	void printPrime(int m) {
+		int j = 0;
+		for (int i = 2; i <= m; i++){
+			if (isPrime(i)){
+				j++;
+				if(j%10==0){				// 每10个质数一行
+					System.out.print(" " + i);
+					System.out.println(); 		// 换行
+				}
+				else  
+					System.out.print(" " + i);
+			}
+		}	
+	}
+	public static void main(String[] args) {
+		PrimeNumber pn = new PrimeNumber();
+		pn.printPrime(100); 					// 打印出100 之内的所有质数
+		
+	}
+}
+	程序运行结果：
+2  3  5  7  11  13  17  19  23  29
+31  37  41  43  47  53  59  61  67  71
+73  79  83  89  97

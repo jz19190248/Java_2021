@@ -1,0 +1,95 @@
+ThreadPool.java
+	package org.concurrency.collation;
+	import java.util.*;
+	public class ThreadPool extends ThreadGroup {
+		private List threads = new LinkedList();
+		private TaskQueue queue;
+		public ThreadPool(TaskQueue queue) {
+			super("Thread-Pool");
+			this.queue = queue;
+		}
+		/********启动一个新的线程****************************
+		public synchronized void addWorkerThread() {
+			Thread t = new WorkerThread(this, queue);
+			threads.add(t);
+			t.start();									// 启动线程
+		}
+		public synchronized void removeWorkerThread() {
+			if (threads.size() > 0) {
+				WorkerThread t = (WorkerThread) threads.remove(0);
+				t.shutdown();							// 安全关闭线程
+			}
+		}
+		/**********线程当前状态******************************/
+		public synchronized void currentStatus() {
+			System.out.println("-----------------------------------------------");
+			System.out.println("Thread count = " + threads.size());
+			Iterator it = threads.iterator();					// 返回一个迭代器
+			while (it.hasNext()) {
+				WorkerThread t = (WorkerThread) it.next();
+				System.out.println(t.getName() + ": "+ (t.isIdle() ? "idle" : "busy"));
+			}
+			System.out.println("-----------------------------------------------");
+		}
+	}
+ThreadTest.java
+	package org.concurrency.collation;
+	public class ThreadTest {
+		public static void main(String[] args) {
+			TaskQueue queue = new TaskQueue();
+			ThreadPool pool = new ThreadPool(queue);
+			for (int i = 0; i < 10; i++) {
+				queue.putTask(new CalculateTask());
+				queue.putTask(new TimerTask());
+			}
+			pool.addWorkerThread();						// 加入线程池中
+			pool.addWorkerThread();
+			doSleep(8000);								// 睡眠一段时间
+			pool.currentStatus();							// 获取线程池的当前状态
+		}
+		private static void doSleep(long ms) {
+			try {
+				Thread.sleep(ms);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	程序运行的一种可能结果：
+	worker-0 start.
+	[CalculateTask 0] start...
+	worker-1 start.
+	[TimerTask 0] start...
+	[TimerTask 0] done.
+	[CalculateTask 1] start...
+	[CalculateTask 0] done.
+	[TimerTask 1] start...
+	[CalculateTask 1] done.
+	[CalculateTask 2] start...
+	[TimerTask 1] done.
+	[TimerTask 2] start...
+	[TimerTask 2] done.
+	[CalculateTask 3] start...
+	-----------------------------------------------
+	Thread count = 2
+	[CalculateTask 2] done.
+	[TimerTask 3] start...
+	worker-0: busy
+	worker-1: busy
+	-----------------------------------------------
+	worker-2 start.
+	[CalculateTask 4] start...
+	worker-3 start.
+	worker-4 start.
+	[CalculateTask 5] start...
+	[TimerTask 4] start...
+	worker-5 start.
+	worker-6 start.
+	[TimerTask 5] start...
+	[CalculateTask 6] start...
+	[TimerTask 3] done.
+	[CalculateTask 3] done.
+	[TimerTask 6] start...
+	[CalculateTask 7] start...
+	[TimerTask 4] done.
+	…

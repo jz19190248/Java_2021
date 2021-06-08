@@ -1,0 +1,64 @@
+// ***********从控制台读入命令***********************
+	private void readCommand() {
+		// 若还没有创建航班，提示先创建航班
+		if (flightName == null) {
+			System.out.println("*********************************************");
+			System.out.println("Please Create The Flight Data First!");
+			System.out.println("Use command: create flight_name rows rowLenght <CR>");
+			System.out.println("*********************************************\n\n\n");
+		}
+		System.out.print("\nCOMMAND>"); 					// 命令提示符
+		try {
+			cmdString = br.readLine().trim(); 					// 读取命令串
+		} catch (IOException e) {
+			System.out.println(" command error!  ");
+			cmdString = null;
+		}
+	}
+	//************分析命令串*******************************
+	// cmds 用于保存命令的各个分量，如：命令：create sk213 10 5
+	private void processCommand() { 
+		// "create" 放在 cmds[0]， "sk213" 放在 cmds[1]，"10" 放在 cmds[2]，// "5" 放在 cmds[3]
+		String[] cmds;
+		String cmd;
+		if (cmdString != null) {
+			cmds = command(cmdString); 					// 分析命令，分离出各个分量
+			if (cmds != null) {
+				cmd = cmds[0].toLowerCase(); 
+				if (cmd.equals("create")) { 					// 处理create命令
+					if (flightName == null) 				// 若航班还没有创建
+						createCommand(cmds);
+					else { 							// 仅处理一个航班
+						System.out.println("Create Error:can't handle more flights!");
+					}
+				} else if (cmd.equals("reserve")) { 			// 处理reserve命令
+					if (flightName != null) 				// 当航班已创建过
+						reserveCommand(cmds);
+				} else if (cmd.equals("cancel")) { 				// 处理cancel命令
+					if (flightName != null) 				// 当航班已创建过
+						cancelCommand(cmds);
+				} else if (cmd.equals("list")) { 				// 处理list命令
+					if (flightName != null) 				// 当航班已创建过
+						listCommand(cmds);
+				} else if (cmd.equals("exit")) { 				// 处理exit命令
+					System.out.println("Thanks. See you later!");
+					System.exit(0);
+				} else { 
+					System.out.println(" Bad command ! ");
+					cmdString = null;
+				}
+			}
+		}
+	}
+	// **********分割命令串*****************************
+	private String[] command(String cmdStr) {
+		int cc = 0; 										// 命令串中分量的个数
+		String[] cmd;
+		StringTokenizer st = new StringTokenizer(cmdStr);
+		if ((cc = st.countTokens()) == 0)
+			return null;
+		cmd = new String[cc];
+		for (int i = 0; i < cc; i++)
+			cmd[i] = st.nextToken();
+		return cmd;
+	}

@@ -1,0 +1,50 @@
+TestThread1.java
+	package org.concurrency.expansion;
+	public class TestThread1 {
+		public static void main(String args[]) {
+			MyThread1 mt = new MyThread1();
+			Thread t = new Thread(mt);					// 创建用户线程
+			t.start();								// 启动用户线程
+			for (int a = 0; a < 10; a++) {
+				System.out.println(Thread.currentThread().getName() + ":" + a);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					throw new RuntimeException(e);
+				}
+			}
+		}	
+	}
+	class MyThread1 implements Runnable {				// 通过实现Runnable接口来创建线程
+		public void run() {
+			for (int a = 0; a < 10; a++) {
+				System.out.println(Thread.currentThread().getName() + ":" + a);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					throw new RuntimeException(e);
+				}
+			}
+		}
+	}
+	程序的一种可能运行结果：
+	main:0
+	Thread-0:0
+	main:1
+	Thread-0:1
+	main:2
+	Thread-0:2
+	Thread-0:3
+	main:3
+	Thread-0:4
+	main:4
+	main:5
+	Thread-0:5
+	Thread-0:6
+	main:6
+	Thread-0:7
+	main:7
+	Thread-0:8
+	main:8
+	main:9
+	Thread-0:9

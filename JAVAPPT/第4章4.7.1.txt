@@ -1,0 +1,40 @@
+TestAccess1.java
+	package org.approach1;
+	public class TestAccess1 {
+		private String var1="private variable";						// 私有成员变量
+		String var2="default variable";							// 缺省成员变量
+		protected String var3="protected variable";					// 受保护的成员变量
+		public String var4="public variable";						// 公有的成员变量
+		private void f1(){									// 私有成员方法
+			System.out.println("private method");
+		}
+		void f2(){											// 缺省的成员方法
+			System.out.println("default method");
+		}
+		protected void f3(){									// 受保护的成员方法
+			System.out.println("protected method");
+		}
+		public void f4(){										// 公有的成员方法
+			System.out.println("public method");	
+		}
+		public static void main(String[]args){
+			TestAccess1 access1= new TestAccess1();
+			System.out.println(access1.var1);
+			System.out.println(access1.var2);
+			System.out.println(access1.var3);
+			System.out.println(access1.var4);
+			access1.f1();
+			access1.f2();
+			access1.f3();
+			access1.f4();
+		}
+	}
+	程序运行结果：
+	private variable
+	default variable
+	protected variable
+	public variable
+	private method
+	default method
+	protected method
+	public method

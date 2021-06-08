@@ -1,0 +1,40 @@
+TowerPoint.java
+	package org.hanoiTower;
+	import java.awt.*;
+	public class TowerPoint {
+		private int x, y;										// 位置坐标
+		private boolean having;								// 是否有盘子
+		private Disk disk = null;
+		private HanoiTower tower = null;							// 汉诺塔
+		public TowerPoint(int x, int y, boolean having) {
+			this.x = x;										
+			this.y = y;
+			this.having = having;
+		}
+		public boolean ishaving() {							// 判断是否有盘子
+			return having;
+		}
+		public void setHaving(boolean having) {				// 设置上方是否有盘子
+			this.having = having;
+		}
+		public int getX() {
+			return x;
+		}
+		public int getY() {
+			return y;
+		}
+		public void deposit(Disk disk, HanoiTower tower) {			// 放置盘子
+			this.tower = tower;
+			tower.setLayout(null);
+			this.disk = disk;
+			tower.add(disk);
+			int w = disk.getBounds().width;
+			int h = disk.getBounds().height;
+			disk.setBounds(x - w / 2, y - h / 2, w, h);				// 在指定位置画盘子
+			having = true;
+			tower.validate();								// 画面刷新
+		}
+		public Disk getDisk() {							// 获取盘子
+			return disk;
+		}
+	}

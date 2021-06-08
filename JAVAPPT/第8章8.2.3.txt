@@ -1,0 +1,46 @@
+PrintStreamDemo.java
+	package org.iostream;
+	import java.io.*;
+	public class PrintStreamDemo {
+		public static void main(String[] args) {
+			int[][] a = new int[10][10];
+			PrintStream ps = null;
+			try {
+				FileOutputStream fos = new FileOutputStream(
+						"e:/workbench/MyProject_08/src/org/iostream/test3.txt");
+				ps = new PrintStream(fos);
+				if (ps != null) {
+					System.setOut(ps);						// 使标准输出重定向
+				}
+				int i = 0;
+				int j = 0;
+				for (i = 0; i < 10; i++) {
+					a[i][i] = 1;								// 使对角线元素为1
+					a[i][0]= 1;								// 使第一列元素为1
+				}
+				for (i = 2; i < 10; i++)
+					for (j = 1; j <= i - 1; j++){
+						a[i][j] = a[i - 1][j - 1] + a[i - 1][j];	// 上一行中同列和前一列两个数之和
+					}
+				for (i = 0; i < 10; i++) {
+					for (j = 0; j <=i; j++) {
+						System.out.print(a[i][j] + " \t");
+					}
+					System.out.println();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();		
+			}
+		}
+	}
+	运行上面的程序，t5.txt文件中将被写入10行杨辉三角形。t5.txt文件中的内容如下：
+	1 	
+	1 	1 	
+	1 	2 	1 	
+	1 	3 	3 	1 	
+	1 	4 	6 	4 	1 	
+	1 	5 	10 	10 	5 	1 	
+	1 	6 	15 	20 	15 	6 	1 	
+	1 	7 	21 	35 	35 	21 	7 	1 	
+	1 	8 	28 	56 	70 	56 	28 	8 	1 	
+	1 	9 	36 	84 	126 	126 	84 	36 	9 	1	

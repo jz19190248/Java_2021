@@ -1,0 +1,39 @@
+TestStaticVar.java
+	class Incrementable {
+		public int num;
+		public static int count = 0; 							// 静态变量count
+		public Incrementable() {
+			count++;					//或 Incrementable. count++; 或 this.count++;
+			num = count;
+		}
+		public Incrementable(int k) {
+			count = num;
+			count++;
+		}
+	}
+	public class TestStaticVar {
+		public static void main(String[] args) {
+			Incrementable[] increment = new Incrementable[5];		// 创建引用类型的数组
+			for (int i = 0; i < increment.length; i++) {
+				increment[i] = new Incrementable();
+				System.out.println("increment[" + i + "].count = " + Incrementable.count
+					+ ",increment[" + i + "].num = " + increment[i].num);
+			}
+			for (int i = 0; i < increment.length; i++) {
+				increment[i] = new Incrementable(0);
+				System.out.println("increment[" + i + "].count = " + Incrementable.count
+					+ ",increment[" + i + "].num = " + increment[i].num);
+			}
+		}
+	}
+	程序运行结果：
+	increment[0].count = 1, increment[0].num = 1
+	increment[1].count = 2, increment[1].num = 2
+	increment[2].count = 3, increment[2].num = 3
+	increment[3].count = 4, increment[3].num = 4
+	increment[4].count = 5, increment[4].num = 5
+	increment[0].count = 1, increment[0].num = 0
+	increment[1].count = 1, increment[1].num = 0
+	increment[2].count = 1, increment[2].num = 0
+	increment[3].count = 1, increment[3].num = 0
+	increment[4].count = 1, increment[4].num = 0

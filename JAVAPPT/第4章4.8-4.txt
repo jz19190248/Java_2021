@@ -1,0 +1,31 @@
+package org.aeroplane;
+	public class Flight implements FlightInterface {
+		private String flightName; 								// 航班名
+		private int row; 										// 座位排数
+		private int rowLength; 								// 每排座位数
+		private int[] fail = { -1 }; 								// 返回预订号
+		private Passenger[] passengerList; 						// 预订座位的旅客
+		public FlightData(String FlightName, int rows, int rowLength)throws Exception {
+			if (FlightName == null || FlightName.trim().length() == 0 || rows <= 0|| rowLength <= 0)
+				throw new Exception("Error");
+			else {
+				this.flightName = FlightName;
+				this.row = rows;
+				this.rowLength = rowLength;
+				this.passengerList = new Passenger[row * rowLength]; 	// 创建航班座位
+				for (int i = 0; i < row * rowLength; i++)
+					passengerList[i] = null; 					// 所有座位没有被预订
+			}
+		}
+		//******** 预订航班座位***********************
+		public int[] reserve(String names[]) {
+			….
+		}
+		//******** 取消航班预订座位*******************
+		public boolean cancel(int bookingNumber) {
+			…
+		}
+		public Passenger[] getPassengerList() {
+			return passengerList;
+		}
+	}

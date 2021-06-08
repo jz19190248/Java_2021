@@ -1,0 +1,43 @@
+TestThread.java
+	package org.concurrency.expansion;
+	class MyThread extends Thread {
+		private int a = 0;
+		public void run() {
+			for (int a = 0; a < 10; a++) {
+				System.out.println(currentThread().getName() + ":" + a);
+				try {
+					sleep(100);					 	// 给其他线程运行的机会
+				} catch (InterruptedException e) {
+					throw new RuntimeException(e);
+				}
+			}
+		}
+	}
+	public class TestThread {
+		public static void main(String[] args) {
+			MyThread thread = new MyThread(); 			// 创建用户线程对象
+			thread.start();			 				// 启动用户线程
+			thread.run(); 							// 主线程调用用户线程对象的run()方法
+		}
+	}
+	程序的一种可能运行结果：
+	main:0
+	Thread-0:0
+	Thread-0:1
+	main:1
+	Thread-0:2
+	main:2
+	Thread-0:3
+	main:3
+	main:4
+	Thread-0:4
+	Thread-0:5
+	main:5
+	Thread-0:6
+	main:6
+	Thread-0:7
+	main:7
+	Thread-0:8
+	main:8
+	Thread-0:9
+	main:9

@@ -1,0 +1,40 @@
+PriorityQueueTest.java
+package org.container;
+import java.util.*;
+import org.container.QueueTest;
+public class PriorityQueueTest{
+	public static void main(String[] args) {
+		PriorityQueue<Integer> priorityQueue = new PriorityQueue<Integer>();
+		Random rand = new Random(99);
+		for(int i = 0; i < 10; i++)
+			priorityQueue.offer(rand.nextInt(i + 10));		// 将一个随机数插入到随机队列中
+		QueueTest.printQ(priorityQueue);					// 输出队列的元素
+		List<Integer> list = Arrays.asList(20, 18, 16,14, 12, 9, 6, 1, 1, 2, 6, 9, 14, 16, 18, 12, 20);
+		priorityQueue = new PriorityQueue<Integer>(list);
+		QueueTest.printQ(priorityQueue);
+	priorityQueue = new PriorityQueue<Integer>(list.size(), Collections.reverseOrder());	// 逆序
+		priorityQueue.addAll(list);						// 向队列中加入元素
+		QueueTest.printQ(priorityQueue);
+		String fact = "EDUCATION SHOULD ESCHEW OBFUSCATION";
+		List<String> strings = Arrays.asList(fact.split(""));		// 分裂字符串并返回字符数组
+		PriorityQueue<String> stringPQ =new PriorityQueue<String>(strings);
+		QueueTest.printQ(stringPQ);
+		stringPQ = new PriorityQueue<String>(strings.size(), Collections.reverseOrder());
+		stringPQ.addAll(strings);
+		QueueTest.printQ(stringPQ);
+	}
+}
+class QueueTest {
+	// 输出队列的元素
+	public static void printQ(Queue queue) {
+		while (queue.peek() != null)
+			System.out.print(queue.remove() + " ");			// 获取并移除队列的头元素
+		System.out.println();
+	}
+}
+	程序运行结果：
+	0 2 4 7 8 8 9 10 13 14 
+1 1 2 6 6 9 9 12 12 14 14 16 16 18 18 20 20 
+20 20 18 18 16 16 14 14 12 12 9 9 6 6 2 1 1 
+       	A A B C C C D D E E E F H H I I L N N O O O O S S S T T U U U W 
+W U U U T T S S S O O O O N N L I I H H F E E E D D C C C B A A        
